@@ -1,6 +1,6 @@
 <h1>📂 Scripts:</h1>
 
-<p>Descrição:</p>
+<h3>📌 Descrição:</h3>
 <p>Esta pasta contém quase todos scripts GDScript do jogo. Excluindo os de uso global.</p>
 
 <p>📌 O que você encontrará aqui?,</p>

@@ -1,6 +1,6 @@
 <h1>📂 Scenes:</h1>
 
-<p>Descrição:</p>
+<h3>📌 Descrição:</h3>
 <p>Esta pasta contém todos as fases do jogo.</p>
 
 <p>📌 O que você encontrará aqui?,</p>

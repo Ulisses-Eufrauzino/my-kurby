@@ -1,6 +1,6 @@
 <h1>📂 Actors:</h1>
 
-<p>Descrição:</p>
+<h3>📌 Descrição:</h3>
 <p>Esta pasta contém todos os atores do jogo, como personagens jogáveis, NPCs e inimigos.</p>
 
 <p>📌 O que você encontrará aqui?,</p>

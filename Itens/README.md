@@ -1,6 +1,6 @@
 <h1>📂 Itens:</h1>
 
-<p>Descrição:</p>
+<h3>📌 Descrição:</h3>
 <p>Esta pasta contém todos os itens do jogo e coisas de uso geral, como bombas, chackpoint, moedas.</p>
 
 <p>📌 O que você encontrará aqui?,</p>
