@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhadyojtxdqtn"]
+
+[ext_resource type="Script" path="res://Script/pieces_box.gd" id="1_3wodw"]
+
+[node name="pieces-box" type="RigidBody2D"]
+script = ExtResource("1_3wodw")
+
+[node name="sprite_pieces" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="notifier_pieces" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="notifier_pieces" to="." method="_on_notifier_pieces_screen_exited"]

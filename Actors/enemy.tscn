@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://bu5kvkdcy7fve"]
+
+[ext_resource type="Texture2D" uid="uid://by1w17knwrb36" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="1_8lrrv"]
+[ext_resource type="Script" path="res://Script/ground_enemy.gd" id="1_kyy0l"]
+[ext_resource type="Texture2D" uid="uid://cdp2nqkkwgae5" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Hurt (16 x 16).png" id="2_h07eb"]
+[ext_resource type="PackedScene" uid="uid://r74soxqu5io5" path="res://Itens/hitbox.tscn" id="5_asxsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4esm"]
+atlas = ExtResource("2_h07eb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upit4"]
+atlas = ExtResource("1_8lrrv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt56s"]
+atlas = ExtResource("1_8lrrv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx1i3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4esm")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upit4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt56s")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2agr"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je57l"]
+size = Vector2(8, 2)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_kyy0l")
+
+[node name="animation_enemy" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yx1i3")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="CollisionEnemy" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_b2agr")
+
+[node name="wall_detecty" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(-7, 0)
+collision_mask = 6
+
+[node name="hitbox" parent="." instance=ExtResource("5_asxsl")]
+
+[node name="Collision_hitbox" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_je57l")
