@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bl55oir1xhn6s"]
 
 [ext_resource type="Texture2D" uid="uid://c7kfakm0vm8ce" path="res://Assets/Sprite Pack 2/7 - Rocket Cherry/Hopping (16 x 32).png" id="1_3qgvg"]
-[ext_resource type="Script" path="res://Script/cherry.gd" id="1_iyo06"]
+[ext_resource type="Script" uid="uid://b8t5rypdk5sni" path="res://Script/cherry.gd" id="1_iyo06"]
 [ext_resource type="Texture2D" uid="uid://b7mfd73hn5fh2" path="res://Assets/Sprite Pack 2/7 - Rocket Cherry/Hurt (16 x 32).png" id="2_or23n"]
 [ext_resource type="PackedScene" uid="uid://r74soxqu5io5" path="res://Itens/hitbox.tscn" id="3_0w8d7"]
 

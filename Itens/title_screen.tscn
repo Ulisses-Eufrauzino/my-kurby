@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://boriwk6fe47hd"]
 
 [ext_resource type="Texture2D" uid="uid://bgwmptgrppf3m" path="res://Assets/Mini FX, Items & UI/Mini UI/title-screen.jpg" id="1_vr2wj"]
-[ext_resource type="Script" path="res://Script/title_screen.gd" id="1_xsj77"]
+[ext_resource type="Script" uid="uid://bii8ljlanfak8" path="res://Script/title_screen.gd" id="1_xsj77"]
 [ext_resource type="Texture2D" uid="uid://jiwsb7rwhep" path="res://Assets/Mini FX, Items & UI/Mini UI/game_logo.png" id="2_uuwln"]
 [ext_resource type="Theme" uid="uid://cy3yj4cjl63pg" path="res://Themes/default_btn.tres" id="3_s4yyg"]
 [ext_resource type="Texture2D" uid="uid://cjiickv5tuyqd" path="res://Assets/Sprite Pack 2/2 - Mr. Mochi/Jumping (32 x 32).png" id="4_q48co"]
@@ -89,8 +89,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r84rq"]
 _data = {
-"RESET": SubResource("Animation_edqdr"),
-"revel": SubResource("Animation_gvgfs")
+&"RESET": SubResource("Animation_edqdr"),
+&"revel": SubResource("Animation_gvgfs")
 }
 
 [node name="TitleScreen" type="Control"]
@@ -172,7 +172,7 @@ flip_h = true
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_r84rq")
+&"": SubResource("AnimationLibrary_r84rq")
 }
 autoplay = "revel"
 

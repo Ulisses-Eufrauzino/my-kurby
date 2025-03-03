@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ujxyqv0inp86"]
 
 [ext_resource type="Texture2D" uid="uid://cv6yotga5v04b" path="res://Assets/Mini FX, Items & UI/Food Items/Sushi_Variety (16 x 16).png" id="1_jpw24"]
-[ext_resource type="Script" path="res://Script/goal.gd" id="1_w8wl2"]
+[ext_resource type="Script" uid="uid://d105xgg50ai04" path="res://Script/goal.gd" id="1_w8wl2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rwcly"]
 radius = 10.3387
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rs8u2"]
 _data = {
-"RESET": SubResource("Animation_1fnu8"),
-"float": SubResource("Animation_jm0t5")
+&"RESET": SubResource("Animation_1fnu8"),
+&"float": SubResource("Animation_jm0t5")
 }
 
 [node name="goal" type="Area2D"]
@@ -60,7 +60,7 @@ shape = SubResource("CircleShape2D_rwcly")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rs8u2")
+&"": SubResource("AnimationLibrary_rs8u2")
 }
 autoplay = "float"
 speed_scale = 0.7

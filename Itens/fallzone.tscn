@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cj625xx8d3inq"]
 
-[ext_resource type="Script" path="res://Script/fallzone.gd" id="1_fevl2"]
+[ext_resource type="Script" uid="uid://bsnkind7wp5c4" path="res://Script/fallzone.gd" id="1_fevl2"]
 
 [node name="fallzone" type="Area2D"]
 collision_layer = 2

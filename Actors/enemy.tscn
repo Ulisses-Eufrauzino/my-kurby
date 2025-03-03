@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bu5kvkdcy7fve"]
 
 [ext_resource type="Texture2D" uid="uid://by1w17knwrb36" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="1_8lrrv"]
-[ext_resource type="Script" path="res://Script/ground_enemy.gd" id="1_kyy0l"]
+[ext_resource type="Script" uid="uid://ckxgxfhcvoqai" path="res://Script/ground_enemy.gd" id="1_kyy0l"]
 [ext_resource type="Texture2D" uid="uid://cdp2nqkkwgae5" path="res://Assets/Sprite Pack 2/4 - Robo Pumpkin/Hurt (16 x 16).png" id="2_h07eb"]
 [ext_resource type="PackedScene" uid="uid://r74soxqu5io5" path="res://Itens/hitbox.tscn" id="5_asxsl"]
 

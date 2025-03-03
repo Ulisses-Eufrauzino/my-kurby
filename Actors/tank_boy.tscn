@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://bwcwwxc8ilb7o"]
 
 [ext_resource type="Texture2D" uid="uid://82g86ai2fgkj" path="res://Assets/Sprite Pack 2/8 - Comrade Cheese Puff/Tank_Movement (32 x 32).png" id="1_keur3"]
-[ext_resource type="Script" path="res://Actors/tank_boy.gd" id="1_x6jch"]
+[ext_resource type="Script" uid="uid://15sbcyddk1am" path="res://Actors/tank_boy.gd" id="1_x6jch"]
 [ext_resource type="PackedScene" uid="uid://dym4tahokap0y" path="res://Actors/lose_boss.tscn" id="2_q35gv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atga7"]
@@ -198,14 +198,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j5ty3"]
 _data = {
-"RESET": SubResource("Animation_wpaul"),
-"death": SubResource("Animation_namfc"),
-"enter_scene": SubResource("Animation_auqgw"),
-"hide_bomb": SubResource("Animation_f3vmv"),
-"missile_attack": SubResource("Animation_xa7hw"),
-"moving": SubResource("Animation_6rdgj"),
-"show_reveal": SubResource("Animation_7hfyj"),
-"vunerable": SubResource("Animation_7anpt")
+&"RESET": SubResource("Animation_wpaul"),
+&"death": SubResource("Animation_namfc"),
+&"enter_scene": SubResource("Animation_auqgw"),
+&"hide_bomb": SubResource("Animation_f3vmv"),
+&"missile_attack": SubResource("Animation_xa7hw"),
+&"moving": SubResource("Animation_6rdgj"),
+&"show_reveal": SubResource("Animation_7hfyj"),
+&"vunerable": SubResource("Animation_7anpt")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fj5d1"]
@@ -339,7 +339,7 @@ position = Vector2(0, -1)
 
 [node name="anim_player" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_j5ty3")
+&"": SubResource("AnimationLibrary_j5ty3")
 }
 
 [node name="anim_tree" type="AnimationTree" parent="."]
@@ -381,10 +381,10 @@ position = Vector2(-0.333333, -10.3333)
 position = Vector2(0, -10.6667)
 emitting = false
 amount = 24
-process_material = SubResource("ParticleProcessMaterial_hjxu5")
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_hjxu5")
 
 [connection signal="timeout" from="bomb_cooldown" to="." method="_on_bomb_cooldown_timeout"]
 [connection signal="timeout" from="missile_cooldown" to="." method="_on_missile_cooldown_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhhihoa0b168m"]
 
 [ext_resource type="Texture2D" uid="uid://d0iroo4opg1o0" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Spike.png" id="1_po4yy"]
-[ext_resource type="Script" path="res://Script/spikes_area.gd" id="1_x0qkc"]
+[ext_resource type="Script" uid="uid://bawsb5hb2n0p" path="res://Script/spikes_area.gd" id="1_x0qkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06q5s"]
 size = Vector2(10, 13)

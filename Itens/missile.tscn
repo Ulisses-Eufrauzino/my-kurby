@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxanwla28s2cx"]
 
-[ext_resource type="Script" path="res://Script/missile.gd" id="1_5kgmx"]
+[ext_resource type="Script" uid="uid://b34i87acb7hek" path="res://Script/missile.gd" id="1_5kgmx"]
 [ext_resource type="Texture2D" uid="uid://dknaf4af81l8n" path="res://Assets/Sprite Pack 2/8 - Comrade Cheese Puff/Missile (16 x 8).png" id="1_hpvdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dokxp"]

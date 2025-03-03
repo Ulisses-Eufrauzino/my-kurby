@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dtoxecqgua8lo"]
 
 [ext_resource type="Texture2D" uid="uid://kby67hty3maq" path="res://Assets/Mini FX, Items & UI/Effects/Explosion_Poof (16 x 16).png" id="1_5v7d5"]
-[ext_resource type="Script" path="res://Script/explosion.gd" id="2_u0xmw"]
+[ext_resource type="Script" uid="uid://b8ltmomuyqwmo" path="res://Script/explosion.gd" id="2_u0xmw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orvw7"]
 atlas = ExtResource("1_5v7d5")

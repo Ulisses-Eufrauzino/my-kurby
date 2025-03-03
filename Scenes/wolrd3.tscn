@@ -1,6 +1,6 @@
-[gd_scene load_steps=45 format=4 uid="uid://b4p03uxsqss80"]
+[gd_scene load_steps=48 format=4 uid="uid://b4p03uxsqss80"]
 
-[ext_resource type="Script" path="res://Script/wolrd.gd" id="1_0julq"]
+[ext_resource type="Script" uid="uid://bedo57u5u35m1" path="res://Script/wolrd.gd" id="1_0julq"]
 [ext_resource type="PackedScene" uid="uid://ceeb8tj4v3ymc" path="res://Itens/moviment_plataform.tscn" id="2_nbh8n"]
 [ext_resource type="PackedScene" uid="uid://b2fwdem87766l" path="res://Itens/falling_platform.tscn" id="3_msby1"]
 [ext_resource type="Texture2D" uid="uid://0jhd7jpx8w1m" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="4_682pf"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://xowu3a13hplt" path="res://Itens/coin.tscn" id="10_d1bt3"]
 [ext_resource type="Texture2D" uid="uid://db8fov3yr8mg3" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="11_hkgqb"]
 [ext_resource type="Texture2D" uid="uid://vuqvuyqrtp5f" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="12_br12w"]
-[ext_resource type="Shader" path="res://Shaders/movimente_cloud.gdshader" id="13_qbjck"]
+[ext_resource type="Shader" uid="uid://bwo6dlpv2j5aw" path="res://Shaders/movimente_cloud.gdshader" id="13_qbjck"]
 [ext_resource type="Texture2D" uid="uid://dkb0ryopppta7" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="14_y5m6p"]
 [ext_resource type="Texture2D" uid="uid://dwwr4lbdkxk7u" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="15_618lg"]
 [ext_resource type="Texture2D" uid="uid://cb1a2hd7mmi0l" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="16_swdn8"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b6cnasqvt5qdu" path="res://Actors/base_patrol.tscn" id="19_lpklu"]
 [ext_resource type="PackedScene" uid="uid://b3ywmg1s2mrhm" path="res://Itens/checkpoint.tscn" id="20_k4ctb"]
 [ext_resource type="PackedScene" uid="uid://ujxyqv0inp86" path="res://Itens/goal.tscn" id="21_m0y23"]
-[ext_resource type="Script" path="res://Script/hud_controller.gd" id="22_v4osr"]
+[ext_resource type="Script" uid="uid://oq2grqbbaipe" path="res://Script/hud_controller.gd" id="22_v4osr"]
 [ext_resource type="Texture2D" uid="uid://bahw1v5xvapaa" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins_sprite/00_Coin-Sprites.png" id="23_yinjl"]
 [ext_resource type="Texture2D" uid="uid://dspv7ulb1oko4" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins_sprite/01_Coin-Sprites.png" id="24_cbnyp"]
 [ext_resource type="Texture2D" uid="uid://uvjppftyfy07" path="res://Assets/Mini FX, Items & UI/Common Pick-ups/coins_sprite/02_Coin-Sprites.png" id="25_4c3ew"]
@@ -29,10 +29,11 @@
 [ext_resource type="FontFile" uid="uid://bqa7ihm8ftvpr" path="res://Assets/Fonts/RevMiniPixel.ttf" id="27_ipc2t"]
 [ext_resource type="Texture2D" uid="uid://dhrc8pdd65qm8" path="res://Assets/Mini FX, Items & UI/Mini UI/Life-Counter-Icon.png" id="28_7061k"]
 [ext_resource type="PackedScene" uid="uid://dx02rrx8osndt" path="res://Itens/pause_menu.tscn" id="29_3eq6p"]
-[ext_resource type="Script" path="res://Script/transition.gd" id="30_3wx8j"]
-[ext_resource type="Shader" path="res://Shaders/wolrd.gdshader" id="31_0nsq7"]
-[ext_resource type="Script" path="res://Script/color_rect.gd" id="32_xn7lh"]
+[ext_resource type="Script" uid="uid://eqvbdy4728ab" path="res://Script/transition.gd" id="30_3wx8j"]
+[ext_resource type="Shader" uid="uid://bmorl4bcfn7n3" path="res://Shaders/wolrd.gdshader" id="31_0nsq7"]
+[ext_resource type="Script" uid="uid://b7kh1cef60ygh" path="res://Script/color_rect.gd" id="32_xn7lh"]
 [ext_resource type="AudioStream" uid="uid://c0k1kdxerhw1w" path="res://Sounds/bg_music.mp3" id="33_5ms0s"]
+[ext_resource type="PackedScene" uid="uid://cj625xx8d3inq" path="res://Itens/fallzone.tscn" id="34_p8kco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7g84u"]
 texture = ExtResource("4_682pf")
@@ -190,6 +191,12 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(1, 1, 1, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei6b0"]
+size = Vector2(5522, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifp1t"]
+size = Vector2(1070, 22)
+
 [node name="Wolrd3" type="Node2D"]
 script = ExtResource("1_0julq")
 
@@ -265,49 +272,76 @@ scale = Vector2(3, 3)
 [node name="Coin" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(376, 432)
+position = Vector2(338, 414)
 
 [node name="Coin2" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(440, 376)
+position = Vector2(370, 347)
+
+[node name="Coin47" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(436, 296)
 
 [node name="Coin3" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(512, 352)
+position = Vector2(488, 352)
 
 [node name="Coin4" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(584, 368)
+position = Vector2(566, 294)
+
+[node name="Coin48" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(566, 294)
 
 [node name="Coin5" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(640, 416)
+position = Vector2(660, 414)
+
+[node name="Coin49" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(619, 347)
 
 [node name="Coin6" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(992, 432)
+position = Vector2(947, 422)
 
 [node name="Coin7" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1056, 376)
+position = Vector2(979, 355)
+
+[node name="Coin50" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(1045, 304)
 
 [node name="Coin8" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1128, 352)
+position = Vector2(1097, 360)
 
 [node name="Coin9" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1200, 368)
+position = Vector2(1175, 302)
+
+[node name="Coin51" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(1175, 302)
 
 [node name="Coin10" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1256, 416)
+position = Vector2(1269, 422)
+
+[node name="Coin52" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(1228, 355)
 
 [node name="Coin11" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1608, 432)
+position = Vector2(1579, 424)
 
 [node name="Coin12" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1672, 376)
+position = Vector2(1611, 357)
+
+[node name="Coin53" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(1677, 306)
 
 [node name="Coin13" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1744, 352)
+position = Vector2(1729, 362)
 
 [node name="Coin14" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1816, 368)
+position = Vector2(1807, 304)
+
+[node name="Coin54" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(1807, 304)
 
 [node name="Coin15" parent="Coin" instance=ExtResource("10_d1bt3")]
-position = Vector2(1872, 416)
+position = Vector2(1901, 424)
+
+[node name="Coin55" parent="Coin" instance=ExtResource("10_d1bt3")]
+position = Vector2(1860, 357)
 
 [node name="Coin16" parent="Coin" instance=ExtResource("10_d1bt3")]
 position = Vector2(2553, 384)
@@ -533,6 +567,7 @@ scale = Vector2(3, 3)
 [node name="goal" parent="." instance=ExtResource("21_m0y23")]
 z_index = 1
 position = Vector2(8152, 440)
+next_level = "res://Scenes/wolrd4.tscn"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -665,6 +700,8 @@ material = SubResource("ShaderMaterial_6ab07")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -679,5 +716,19 @@ parameters/looping = true
 
 [node name="player_start_position" type="Marker2D" parent="."]
 position = Vector2(137, 430)
+
+[node name="fallzone" parent="." instance=ExtResource("34_p8kco")]
+position = Vector2(5272, 756)
+
+[node name="collision" type="CollisionShape2D" parent="fallzone"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ei6b0")
+
+[node name="fallzone2" parent="." instance=ExtResource("34_p8kco")]
+position = Vector2(8814, 758)
+
+[node name="collision" type="CollisionShape2D" parent="fallzone2"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ifp1t")
 
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

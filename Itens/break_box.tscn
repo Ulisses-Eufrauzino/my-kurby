@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://csbrmk63c2ajo"]
 
-[ext_resource type="Script" path="res://Script/break_box.gd" id="1_b7i5l"]
+[ext_resource type="Script" uid="uid://r7g8eal50fj2" path="res://Script/break_box.gd" id="1_b7i5l"]
 [ext_resource type="Texture2D" uid="uid://bs8qmm581q0h4" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="1_q1ux5"]
 [ext_resource type="AudioStream" uid="uid://djbpwfqgpa1fg" path="res://Sounds/box_collision_sfx.wav" id="3_stf5o"]
 
@@ -64,8 +64,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqxnv"]
 _data = {
-"RESET": SubResource("Animation_wsrxk"),
-"hit": SubResource("Animation_pqyxy")
+&"RESET": SubResource("Animation_wsrxk"),
+&"hit": SubResource("Animation_pqyxy")
 }
 
 [node name="break-box" type="CharacterBody2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://o0r846itti8"]
 
 [ext_resource type="Texture2D" uid="uid://cu1hm666dy68p" path="res://Assets/Sprite Pack 2/4 - Percy/Fireball_Projectile (16 x 16).png" id="1_576e5"]
-[ext_resource type="Script" path="res://Script/fireball.gd" id="1_cos31"]
+[ext_resource type="Script" uid="uid://oplm7i4gb537" path="res://Script/fireball.gd" id="1_cos31"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w361g"]
 atlas = ExtResource("1_576e5")
