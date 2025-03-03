@@ -18,6 +18,8 @@
 
 <p>O jogo não tem um nome oficial, mas eu o batizei de My Kurby, por conta da aparência do protagonista—embora ele seja, na verdade, um mochi! 🍡</p>
 
+<p>O jogo não foi projetado para jogar com a tela cheia. Então para uma melhor experiência manter a tela pequena.</p>
+
 <h1>📸 Imagens do Jogo</h1>
 
 <img src="screenshots\tela_inicial.PNG" alt="Tela Inicial">
