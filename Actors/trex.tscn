@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1u0a0x838exl"]
+[gd_scene load_steps=14 format=3 uid="uid://d1u0a0x838exl"]
 
 [ext_resource type="Texture2D" uid="uid://dpcfnesm486sh" path="res://Assets/Sprite Pack 2/4 - Percy/Running (32 x 32).png" id="1_kcxs4"]
 [ext_resource type="Script" uid="uid://de64tiobqetk" path="res://Script/trex.gd" id="1_nnqq1"]
 [ext_resource type="Texture2D" uid="uid://dk3br7frkaiay" path="res://Assets/Sprite Pack 2/4 - Percy/Shooting_Fireball (32 x 32).png" id="2_6q0s4"]
 [ext_resource type="Texture2D" uid="uid://cvggb6ximbrag" path="res://Assets/Sprite Pack 2/4 - Percy/Hurt (32 x 32).png" id="3_rwofy"]
 [ext_resource type="PackedScene" uid="uid://r74soxqu5io5" path="res://Itens/hitbox.tscn" id="5_ht2o6"]
+[ext_resource type="AudioStream" uid="uid://b0mkerm1l7j4u" path="res://Sounds/fireball.wav" id="6_x43iq"]
 
 [sub_resource type="Animation" id="Animation_jgfwg"]
 length = 0.001
@@ -232,5 +233,9 @@ target_position = Vector2(100, 0)
 position = Vector2(0.166667, -17)
 shape = SubResource("RectangleShape2D_axpmo")
 debug_color = Color(0.984314, 0, 0, 0.419608)
+
+[node name="fireball_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x43iq")
+pitch_scale = 0.7
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -10,6 +10,7 @@ var health_points := 3
 @onready var fireball_spawn_point: Marker2D = $fireball_spawn_point
 @onready var ground_detector: RayCast2D = $ground_detector
 @onready var player_detector: RayCast2D = $player_detector
+@onready var fireball_sfx: AudioStreamPlayer = $fireball_sfx
 
 enum EnemyState {PATROL, ATTACK, HURT}
 var currente_state = EnemyState.PATROL
@@ -73,6 +74,7 @@ func spawn_fireball():
 		new_fireball.set_direction(-1)
 	add_sibling(new_fireball)
 	new_fireball.global_position = fireball_spawn_point.global_position
+	fireball_sfx.play()
 	
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

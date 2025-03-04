@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bas3p7dcyv87p"]
+[gd_scene load_steps=21 format=3 uid="uid://bas3p7dcyv87p"]
 
 [ext_resource type="Script" uid="uid://c16a3erxsjbof" path="res://Script/player.gd" id="1_cn8ft"]
 [ext_resource type="Texture2D" uid="uid://nhvwhx052vih" path="res://Assets/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="2_ghx8g"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vcfr1f4f2b1y" path="res://Assets/Sprite Pack 2/2 - Mr. Mochi/Running (32 x 32).png" id="4_of1vk"]
 [ext_resource type="PackedScene" uid="uid://d1yblv8ohan7w" path="res://Itens/hurtbox.tscn" id="5_owu88"]
 [ext_resource type="AudioStream" uid="uid://bu2uvoutr0sfd" path="res://Sounds/jump_sfx.wav" id="7_pedn8"]
+[ext_resource type="AudioStream" uid="uid://5ln1hk6oq8b0" path="res://Sounds/hurtbox_sfx.wav" id="8_sinrj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5get"]
 radius = 8.0
@@ -137,6 +138,11 @@ shape = SubResource("RectangleShape2D_m5ixl")
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_pedn8")
 volume_db = -25.0
+
+[node name="hurtbox_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_sinrj")
+volume_db = -5.0
+pitch_scale = 1.5
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="colision_header" to="." method="_on_colision_header_body_entered"]

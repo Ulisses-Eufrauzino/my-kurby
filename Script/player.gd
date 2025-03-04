@@ -24,6 +24,7 @@ var fall_gravity
 @onready var remote_player := $remote_player as RemoteTransform2D
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var destroy_sfx = preload("res://Sounds/destroy_sfx.tscn")
+@onready var hurtbox_sfx: AudioStreamPlayer = $hurtbox_sfx
 
 signal player_has_died()
 
@@ -77,6 +78,7 @@ func _physics_process(delta: float) -> void:
 func _on_hurtbox_body_entered(body):
 	var knockback = Vector2((global_position.x - body.global_position.x) * knockback_power, -200)
 	take_damage(knockback)
+	hurtbox_sfx.play()
 		
 	if body.is_in_group("fireball"):
 		body.queue_free()

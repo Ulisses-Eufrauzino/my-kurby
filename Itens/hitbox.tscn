@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://r74soxqu5io5"]
+[gd_scene load_steps=3 format=3 uid="uid://r74soxqu5io5"]
 
 [ext_resource type="Script" uid="uid://dabp78cx6o1p1" path="res://Script/hitbox.gd" id="1_e6yuh"]
+[ext_resource type="AudioStream" uid="uid://bd8sa20bnsh4w" path="res://Sounds/kick.mp3" id="2_qdrd1"]
 
 [node name="hitbox" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_e6yuh")
+
+[node name="kick_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qdrd1")
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

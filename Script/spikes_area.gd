@@ -2,7 +2,6 @@ extends Area2D
 
 @onready var sprite_spike: Sprite2D = $sprite_spike
 @onready var collision_spike: CollisionShape2D = $collision_spike
-
 @export var tamanho: Vector2 = Vector2(8,8) #Valor inicial padrão 
 
 # Called when the node enters the scene tree for the first time.

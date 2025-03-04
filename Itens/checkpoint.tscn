@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3ywmg1s2mrhm"]
+[gd_scene load_steps=15 format=3 uid="uid://b3ywmg1s2mrhm"]
 
 [ext_resource type="Script" uid="uid://vnxcoff0rvs5" path="res://Script/checkpoint.gd" id="1_mbcvm"]
 [ext_resource type="Texture2D" uid="uid://blnx5ytu3g5ks" path="res://Assets/Mini FX, Items & UI/Mini UI/checkpoint.png" id="2_k3f0k"]
+[ext_resource type="AudioStream" uid="uid://cifq2e3fv8svk" path="res://Sounds/checkpoint.wav" id="3_lmbb7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0s8i"]
 atlas = ExtResource("2_k3f0k")
@@ -102,6 +103,11 @@ frame_progress = 0.533825
 [node name="collision_check" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_gp1si")
+
+[node name="checkpoint_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lmbb7")
+volume_db = -5.0
+pitch_scale = 1.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="animate_check" to="." method="_on_animate_check_animation_finished"]

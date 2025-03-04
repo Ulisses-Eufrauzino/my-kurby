@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ujxyqv0inp86"]
+[gd_scene load_steps=8 format=3 uid="uid://ujxyqv0inp86"]
 
 [ext_resource type="Texture2D" uid="uid://cv6yotga5v04b" path="res://Assets/Mini FX, Items & UI/Food Items/Sushi_Variety (16 x 16).png" id="1_jpw24"]
 [ext_resource type="Script" uid="uid://d105xgg50ai04" path="res://Script/goal.gd" id="1_w8wl2"]
+[ext_resource type="AudioStream" uid="uid://cn527cav3qv4i" path="res://Sounds/level_passed.wav" id="3_tx5td"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rwcly"]
 radius = 10.3387
@@ -64,5 +65,9 @@ libraries = {
 }
 autoplay = "float"
 speed_scale = 0.7
+
+[node name="level_up_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tx5td")
+pitch_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
