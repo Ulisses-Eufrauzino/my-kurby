@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 const BOMB := preload("res://Itens/bomb.tscn")
 const MISSILE := preload("res://Itens/missile.tscn")
-const SPEED = 12000.0
+const SPEED = 15000.0
 var direction = -1
 @onready var wall_detector: RayCast2D = $wall_detector
 @onready var sprite: Sprite2D = $sprite
 @onready var missile_point: Marker2D = %missile_point
 @onready var bomb_point: Marker2D = %bomb_point
+@onready var shot_sfx: AudioStreamPlayer = $shot_sfx
 
 @onready var anim_tree: AnimationTree = $anim_tree
 @onready var state_machine = anim_tree["parameters/playback"]
@@ -19,7 +20,7 @@ var bomb_count := 0
 var can_launch_missile := true
 var can_launch_bomb := true
 var player_hit := false
-var boss_life := 1
+var boss_life := 5
 
 @export var boss_instance: PackedScene
 
@@ -72,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	elif missile_count >= 4:
 		anim_tree.set("parameters/conditions/time_bomb", true)
 		missile_count = 0
-	elif bomb_count >= 3:
+	elif bomb_count >= 6:
 		anim_tree.set("parameters/conditions/is_vunerable", true)
 		bomb_count = 0
 	else:
@@ -89,12 +90,13 @@ func _physics_process(delta: float) -> void:
 	
 	
 func throw_bomb():
-	if bomb_count <= 3:
+	if bomb_count <= 6:
 		var bomb_instance = BOMB.instantiate()
 		add_sibling(bomb_instance)
 		bomb_instance.global_position = bomb_point.global_position
-		bomb_instance.apply_impulse(Vector2(randi_range(direction * 200, direction * 400), randi_range(-400, -600)))
+		bomb_instance.apply_impulse(Vector2(randi_range(direction * 200, direction * 700), randi_range(-400, -600)))
 		$bomb_cooldown.start()
+		shot_sfx.play()
 		bomb_count += 1
 	
 
@@ -105,6 +107,7 @@ func launch_missile():
 		missile_instance.global_position = missile_point.global_position
 		missile_instance.set_direction(direction)
 		$missile_cooldown.start()
+		shot_sfx.play()
 		missile_count += 1
 
 

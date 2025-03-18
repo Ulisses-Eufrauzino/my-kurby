@@ -72,19 +72,49 @@ animations = [{
 "loop": false,
 "name": &"collection",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg6ec")
+}, {
+"duration": 0.5,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhesu")
+}, {
+"duration": 0.5,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3phv")
+}, {
+"duration": 0.5,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drtw0")
+}, {
+"duration": 0.5,
+"texture": null
+}],
+"loop": true,
+"name": &"delete",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5c60"]
 
-[node name="Coin" type="Area2D"]
+[node name="coin" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_6e0vc")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tfxpc")
-animation = &"coin"
+animation = &"delete"
 autoplay = "coin"
+frame_progress = 0.775547
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -95,4 +125,5 @@ stream = ExtResource("4_3ldt7")
 volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

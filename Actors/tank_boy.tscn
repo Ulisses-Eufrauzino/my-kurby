@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://bwcwwxc8ilb7o"]
+[gd_scene load_steps=38 format=3 uid="uid://bwcwwxc8ilb7o"]
 
 [ext_resource type="Texture2D" uid="uid://82g86ai2fgkj" path="res://Assets/Sprite Pack 2/8 - Comrade Cheese Puff/Tank_Movement (32 x 32).png" id="1_keur3"]
 [ext_resource type="Script" uid="uid://15sbcyddk1am" path="res://Actors/tank_boy.gd" id="1_x6jch"]
 [ext_resource type="PackedScene" uid="uid://dym4tahokap0y" path="res://Actors/lose_boss.tscn" id="2_q35gv"]
+[ext_resource type="AudioStream" uid="uid://cp1r81sk1voh4" path="res://Sounds/shot_sfx.wav" id="4_f37m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atga7"]
 size = Vector2(27, 17)
@@ -385,6 +386,10 @@ one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_hjxu5")
+
+[node name="shot_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f37m0")
+pitch_scale = 1.5
 
 [connection signal="timeout" from="bomb_cooldown" to="." method="_on_bomb_cooldown_timeout"]
 [connection signal="timeout" from="missile_cooldown" to="." method="_on_missile_cooldown_timeout"]

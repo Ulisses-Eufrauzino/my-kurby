@@ -14,12 +14,10 @@ func _ready() -> void:
 	Globlas.player.follow_camera(camera)
 	Globlas.player.player_has_died.connect(reload_game)
 	control.time_is_up.connect(game_over)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 
 func reload_game():
 	await get_tree().create_timer(1.0).timeout
@@ -35,6 +33,7 @@ func reload_game():
 	#Resetando os valores globais
 	Globlas.coins = 0
 	Globlas.score = 0
+	Globlas.count_coins = 0
 	Globlas.player_life = 3
 	
 	Globlas.respawn_player()

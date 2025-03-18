@@ -43,6 +43,7 @@ func patrol_state():
 	
 func attack_state():
 	animation_enemy.play("shooting")
+	await animation_enemy.animation_finished
 	if not player_detector.is_colliding():
 			_change_state(EnemyState.PATROL)
 			

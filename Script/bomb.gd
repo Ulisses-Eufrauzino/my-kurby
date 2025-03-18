@@ -4,7 +4,6 @@ const EXPLOSION = preload("res://Itens/explosion.tscn")
 @onready var collision: CollisionShape2D = $collision
 
 
-
 func _on_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		body.take_damage()

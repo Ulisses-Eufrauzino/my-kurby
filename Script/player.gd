@@ -33,6 +33,9 @@ func _ready() -> void:
 	gravity = (jump_height * 2) / pow(max_time_to_peak, 2)
 	fall_gravity = gravity * 2
 
+func _process(delta: float) -> void:
+	add_life_collection_coin()
+
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
 	# Add the gravity.
@@ -150,18 +153,26 @@ func play_destroy_sfx():
 	
 	
 func lose_coins():
-	var lost_coins: int = min(Globlas.coins, 5)
-	set_collision_layer_value(2, true)
+	#Lembre-se do método min()
+	var lost_coins: int = Globlas.coins
+	$CollisionShape2D.set_deferred("disabled", true)
 	Globlas.coins -= lost_coins
+	Globlas.count_coins = 0
 	for i in lost_coins:
-		var coin = COIN_SCENE.instantiate()
-		coin.z_index = 1
+		var rigid_coin = COIN_SCENE.instantiate()
+		rigid_coin.z_index = 1
 		#get_parent().add_child(coin) Assim dá erro por algum motivo
-		get_parent().call_deferred("add_child", coin)
-		coin.global_position = global_position
-		coin.apply_impulse(Vector2(randi_range(-100, 100), -250))
-	await get_tree().create_timer(0.3).timeout
-	set_collision_layer_value(2, false)
+		get_parent().call_deferred("add_child", rigid_coin)
+		rigid_coin.global_position = global_position
+		if lost_coins <= 50:
+			rigid_coin.apply_impulse(Vector2(randi_range(-200, 200), -250))
+			rigid_coin.call_deferred("set_from_player") # 📌 Aqui marcamos que a moeda veio do jogador!
+		else:
+			rigid_coin.apply_impulse(Vector2(randi_range(-400, 400), -450))
+			rigid_coin.call_deferred("set_from_player") # 📌 Aqui marcamos que a moeda veio do jogador!
+	await get_tree().create_timer(0.03).timeout
+	$CollisionShape2D.set_deferred("disabled", false)
+	
 	
 	
 func handle_death_zone():
@@ -178,9 +189,11 @@ func handle_death_zone():
 		visible = false
 		await get_tree().create_timer(0.5).timeout
 		player_has_died.emit()
-
 	
-	
+func add_life_collection_coin():
+	while Globlas.count_coins == 30:
+		Globlas.player_life += 1
+		Globlas.count_coins = 0
 	
 	
 	

@@ -336,67 +336,67 @@ next_level = "res://Scenes/wolrd2.tscn"
 
 [node name="Coin" type="Node2D" parent="."]
 
-[node name="Coin" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(558, 343)
 
-[node name="Coin2" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin2" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(598, 343)
 
-[node name="Coin3" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin3" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(638, 343)
 
-[node name="Coin4" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin4" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(678, 343)
 
-[node name="Coin5" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin5" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(908, 282)
 
-[node name="Coin6" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin6" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(948, 282)
 
-[node name="Coin7" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin7" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(988, 282)
 
-[node name="Coin8" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin8" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1028, 282)
 
-[node name="Coin9" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin9" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1262, 208)
 
-[node name="Coin10" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin10" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1302, 208)
 
-[node name="Coin11" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin11" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1342, 208)
 
-[node name="Coin12" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin12" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1382, 208)
 
-[node name="Coin13" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin13" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1610, 146)
 
-[node name="Coin14" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin14" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1650, 146)
 
-[node name="Coin15" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin15" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1690, 146)
 
-[node name="Coin16" parent="Coin" instance=ExtResource("4_lhe7g")]
+[node name="coin16" parent="Coin" instance=ExtResource("4_lhe7g")]
 z_index = 1
 position = Vector2(1730, 146)
 
@@ -550,7 +550,7 @@ position = Vector2(137, 430)
 
 [node name="trex" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_b1a2i")]
 z_index = 5
-position = Vector2(466, 471)
+position = Vector2(467, 471)
 target = NodePath("../Player")
 
 [node name="fallzone" parent="." instance=ExtResource("32_bxt8n")]

@@ -248,34 +248,34 @@ position = Vector2(64, 287)
 
 [node name="Coin" type="Node2D" parent="."]
 
-[node name="Coin" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(1526, 424)
 
-[node name="Coin2" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin2" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(1688, 346)
 
-[node name="Coin3" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin3" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(1843, 272)
 
-[node name="Coin9" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin4" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(1886, 193)
 
-[node name="Coin4" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin5" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(2084, 269)
 
-[node name="Coin10" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin6" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(2107, 351)
 
-[node name="Coin5" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin7" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(2360, 376)
 
-[node name="Coin6" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin8" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(2528, 304)
 
-[node name="Coin7" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin9" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(1947, 130)
 
-[node name="Coin8" parent="Coin" instance=ExtResource("10_vyfc4")]
+[node name="coin10" parent="Coin" instance=ExtResource("10_vyfc4")]
 position = Vector2(2028, 194)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -377,7 +377,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("24_lnfq6")
-default_minutes = 0
 default_seconds = 30
 
 [node name="clock_timer" type="Timer" parent="HUD/control"]

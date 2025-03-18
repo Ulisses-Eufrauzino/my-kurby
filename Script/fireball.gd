@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var move_speed := 200.0
+var move_speed := 400.0
 var direction := 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
