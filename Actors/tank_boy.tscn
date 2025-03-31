@@ -1,12 +1,14 @@
-[gd_scene load_steps=38 format=3 uid="uid://bwcwwxc8ilb7o"]
+[gd_scene load_steps=41 format=3 uid="uid://bwcwwxc8ilb7o"]
 
 [ext_resource type="Texture2D" uid="uid://82g86ai2fgkj" path="res://Assets/Sprite Pack 2/8 - Comrade Cheese Puff/Tank_Movement (32 x 32).png" id="1_keur3"]
 [ext_resource type="Script" uid="uid://15sbcyddk1am" path="res://Actors/tank_boy.gd" id="1_x6jch"]
 [ext_resource type="PackedScene" uid="uid://dym4tahokap0y" path="res://Actors/lose_boss.tscn" id="2_q35gv"]
 [ext_resource type="AudioStream" uid="uid://cp1r81sk1voh4" path="res://Sounds/shot_sfx.wav" id="4_f37m0"]
+[ext_resource type="AudioStream" uid="uid://batr55sshbd1m" path="res://Sounds/final_boss_sfx.mp3" id="5_qdp12"]
+[ext_resource type="AudioStream" uid="uid://cbtxhw33ri7r3" path="res://Sounds/explosion_sfx.mp3" id="6_q1r5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atga7"]
-size = Vector2(27, 17)
+size = Vector2(27, 16)
 
 [sub_resource type="Animation" id="Animation_wpaul"]
 length = 0.001
@@ -314,6 +316,9 @@ scale_max = 7.0
 scale_curve = SubResource("CurveTexture_ypq5g")
 color_ramp = SubResource("GradientTexture1D_77eve")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f37m0"]
+size = Vector2(27, 18)
+
 [node name="TankBoy" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 collision_layer = 4
@@ -322,7 +327,7 @@ script = ExtResource("1_x6jch")
 boss_instance = ExtResource("2_q35gv")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -8.5)
+position = Vector2(-0.5, -8)
 shape = SubResource("RectangleShape2D_atga7")
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -391,8 +396,25 @@ process_material = SubResource("ParticleProcessMaterial_hjxu5")
 stream = ExtResource("4_f37m0")
 pitch_scale = 1.5
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -9)
+shape = SubResource("RectangleShape2D_f37m0")
+debug_color = Color(0.698489, 0.493117, 1.92523e-07, 0.42)
+
+[node name="final_boss_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qdp12")
+volume_db = 5.0
+parameters/looping = true
+
+[node name="explosiom_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q1r5k")
+pitch_scale = 0.3
+
 [connection signal="timeout" from="bomb_cooldown" to="." method="_on_bomb_cooldown_timeout"]
 [connection signal="timeout" from="missile_cooldown" to="." method="_on_missile_cooldown_timeout"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

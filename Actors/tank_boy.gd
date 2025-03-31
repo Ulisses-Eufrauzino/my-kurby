@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const BOMB := preload("res://Itens/bomb.tscn")
 const MISSILE := preload("res://Itens/missile.tscn")
+const MOVE_PLATFORM := preload("res://Itens/moviment_plataform.tscn")
 const SPEED = 15000.0
 var direction = -1
 @onready var wall_detector: RayCast2D = $wall_detector
@@ -9,6 +10,9 @@ var direction = -1
 @onready var missile_point: Marker2D = %missile_point
 @onready var bomb_point: Marker2D = %bomb_point
 @onready var shot_sfx: AudioStreamPlayer = $shot_sfx
+@onready var final_boss_sfx: AudioStreamPlayer = $final_boss_sfx
+@onready var bg_music: AudioStreamPlayer = $"../bg_music"
+@onready var explosiom_sfx: AudioStreamPlayer = $explosiom_sfx
 
 @onready var anim_tree: AnimationTree = $anim_tree
 @onready var state_machine = anim_tree["parameters/playback"]
@@ -20,7 +24,7 @@ var bomb_count := 0
 var can_launch_missile := true
 var can_launch_bomb := true
 var player_hit := false
-var boss_life := 5
+var boss_life := 1
 
 @export var boss_instance: PackedScene
 
@@ -42,6 +46,7 @@ func _physics_process(delta: float) -> void:
 	match state_machine.get_current_node():
 		"moving":
 			$hurtbox/collision.set_deferred("disabled", true)
+			$Area2D/CollisionShape2D.set_deferred("disabled", false)
 			if direction == 1:
 				velocity.x = SPEED * delta
 				sprite.flip_h = true
@@ -66,6 +71,7 @@ func _physics_process(delta: float) -> void:
 			await get_tree().create_timer(2.0).timeout
 			player_hit = false
 			$hurtbox/collision.set_deferred("disabled", false)
+			$Area2D/CollisionShape2D.set_deferred("disabled", true)
 			
 	if turn_count <= 2:
 		anim_tree.set("parameters/conditions/can_move", true)
@@ -125,6 +131,8 @@ func _on_player_detector_body_entered(body: Node2D) -> void:
 
 func _on_visible_on_screen_enabler_2d_screen_entered() -> void:
 	set_physics_process(true)
+	bg_music.stop()
+	final_boss_sfx.play()
 	
 
 
@@ -136,6 +144,26 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 
 
 func create_lose_boss():
+	explosiom_sfx.play()
 	var boss_scene = boss_instance.instantiate()
 	add_child(boss_scene)
 	boss_scene.global_position = position
+	spawn_move_platform()
+	await get_tree().create_timer(1).timeout
+	final_boss_sfx.stop()
+	bg_music.play()
+	
+	
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player" && body.has_method("take_damage"):
+		body.take_damage(Vector2(0, -250))
+		
+
+func spawn_move_platform():
+	var platform_instance = MOVE_PLATFORM.instantiate()
+	platform_instance.distance = 50
+	platform_instance.move_horizontal = false
+	platform_instance.scale = Vector2(0.7, 0.7)
+	add_child(platform_instance)
+	platform_instance.global_position = Vector2(2009.0, 479.0)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6cnasqvt5qdu"]
+[gd_scene load_steps=16 format=3 uid="uid://b6cnasqvt5qdu"]
 
 [ext_resource type="Script" uid="uid://di4bjix662q6" path="res://Script/rocket_cherry.gd" id="1_qj4c4"]
+[ext_resource type="Script" uid="uid://coaw2f3yt3x7g" path="res://Script/base_patrol.gd" id="1_vupma"]
 [ext_resource type="Texture2D" uid="uid://veqvm562qy2x" path="res://Assets/Sprite Pack 2/7 - Rocket Cherry/Flying (16 x 32).png" id="2_wl0nf"]
 [ext_resource type="Texture2D" uid="uid://b3oadi21t1n0t" path="res://Assets/Sprite Pack 2/7 - Rocket Cherry/Hurt_Falling (16 x 32).png" id="3_m1qji"]
 [ext_resource type="PackedScene" uid="uid://r74soxqu5io5" path="res://Itens/hitbox.tscn" id="4_8lted"]
@@ -90,12 +91,12 @@ _data = {
 }
 
 [node name="base_patrol" type="Node2D"]
+script = ExtResource("1_vupma")
 
 [node name="rocket_cherry" type="CharacterBody2D" parent="."]
 position = Vector2(0, -1)
 collision_layer = 4
 script = ExtResource("1_qj4c4")
-enemy_score = 150
 
 [node name="animation_enemy" type="AnimatedSprite2D" parent="rocket_cherry"]
 sprite_frames = SubResource("SpriteFrames_5qxe7")
@@ -127,7 +128,7 @@ remote_path = NodePath("../../../rocket_cherry")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ucxh7")
+&"": SubResource("AnimationLibrary_ucxh7")
 }
 autoplay = "patrol"
 speed_scale = 0.5

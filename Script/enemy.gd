@@ -50,22 +50,27 @@ func kill_air_enemy():
 func kill_and_score():
 	Globlas.score += enemy_score
 	queue_free()
-	if can_spawn:
+	if can_spawn and spawn_instance:
 		spawn_new_enemy()
+		await get_tree().create_timer(0.1).timeout  # Dá um tempo para evitar erros
 		get_parent().queue_free()
 	else:
 		queue_free()
 
 func spawn_new_enemy():
-	var instance_scene = spawn_instance.instantiate()
-	var world_node = get_tree().get_current_scene() #Obtém o nó principal da cena stual
+	if spawn_instance:
+		var instance_scene = spawn_instance.instantiate()
+		var world_node = get_tree().get_current_scene() #Obtém o nó principal da cena stual
 	
-	if world_node:
-		world_node.add_child(instance_scene) #Adiciona ao nó correto
+		if world_node:
+			world_node.add_child(instance_scene) #Adiciona ao nó correto
+			instance_scene.global_position = spawn_instance_position.global_position
+		else:
+			push_error("Error: Cena atual não encontrada!")
 	else:
-		push_error("Error: Cena atual não encontrada!")
+		push_error("Error: spawn_instance está null!")
+			
 		
-	instance_scene.global_position = spawn_instance_position.global_position
 	
 	
 	

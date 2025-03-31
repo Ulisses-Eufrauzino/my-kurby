@@ -10,7 +10,6 @@ func _on_coin_tree_exited() -> void:
 
 func set_from_player():
 	if coin:
-		print("Chamando a função on_set_from_player() no coin...")
 		coin.on_set_from_player()
 	else:
 		print("❌ ERRO: Coin não está acessível no RigidBody2D!")

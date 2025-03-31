@@ -5,7 +5,7 @@ extends CanvasLayer
 func _ready() -> void:
 	show_new_scene()
 
-func change_scene(path, delay = 1.5):
+func change_scene(path, delay = 1.3):
 	var scene_transition = get_tree().create_tween()
 	scene_transition.tween_property(color_rect, "threshold", 1.0, 0.5).set_delay(delay)
 	await scene_transition.finished

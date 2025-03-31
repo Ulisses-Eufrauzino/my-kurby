@@ -23,7 +23,6 @@ func _on_body_entered(_body: Node2D) -> void:
 	await $CollisionShape2D.call_deferred("queue_free") #Evita pegar duas moedas
 	Globlas.coins += coins
 	Globlas.count_coins += coins
-	print(Globlas.count_coins)
 	
 
 
@@ -33,7 +32,6 @@ func _on_anim_animation_finished() -> void:
 
 func on_set_from_player():
 	from_player = true
-	print("Moeda marcada como from_player")
 	$anim.play("delete") # Toca a animação de desaparecimento
 	await get_tree().create_timer(2.0).timeout # Espera 1 segundo
 	queue_free() # Remove a moeda

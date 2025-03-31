@@ -170,7 +170,7 @@ func lose_coins():
 		else:
 			rigid_coin.apply_impulse(Vector2(randi_range(-400, 400), -450))
 			rigid_coin.call_deferred("set_from_player") # 📌 Aqui marcamos que a moeda veio do jogador!
-	await get_tree().create_timer(0.03).timeout
+	await get_tree().create_timer(0.04).timeout
 	$CollisionShape2D.set_deferred("disabled", false)
 	
 	
@@ -178,6 +178,8 @@ func lose_coins():
 func handle_death_zone():
 	if Globlas.player_life > 0:
 		Globlas.player_life -= 1
+		Globlas.coins = 0
+		Globlas.count_coins = 0
 		visible = false
 		set_physics_process(false)
 		

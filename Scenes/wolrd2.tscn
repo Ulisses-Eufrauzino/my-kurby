@@ -511,7 +511,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="player_start_position" type="Marker2D" parent="."]
-position = Vector2(63, 326)
+position = Vector2(64, 286)
 
 [node name="trex" parent="." instance=ExtResource("32_io2gs")]
 position = Vector2(1278, 471)

@@ -15,6 +15,7 @@
 <p>Todos os sons utilizados neste projeto podem ser obtidos gratuitamente no site:
 <a href="https://freesound.org/">🔗 FreeSound</a></p>
 
-<p>Gostaria de deixar um agradecimento especial ao criador MortisBlack, que disponibilizou o som utilizado no arquivo (hurtbox_sfx).</p>
+<p>Gostaria de deixar um agradecimento especial aos criadores MortisBlack, fidsml que disponibilizaram respectivamente o som utilizado nos arquivos (hurtbox_sfx) e (final_boss_sfx).</p>
 
 <p>🔗 Perfil de MortisBlack no FreeSound: <a href="https://freesound.org/people/MortisBlack/">Clique aqui</a></p>
+<p>🔗 Perfil de fidsml no FreeSound: <a href="https://freesound.org/people/fidsml/">Clique aqui</a></p>
