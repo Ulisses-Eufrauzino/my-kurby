@@ -20,6 +20,22 @@
 
 <p>O jogo não foi projetado para jogar com a tela cheia. Então para uma melhor experiência manter a tela pequena.</p>
 
+<p>O jogo conta com 3 fases diferentes e uma adicional para o BOSS.</p>
+
+<h3>🎮 Controles e Mecânicas</h3>
+
+<h4>🕹️ Controles:</h4>
+<ul>
+<li>Mover-se: Setas Esquerda e Direita</li>
+<li>Pular: Tecla Espaço</li>
+</ul>
+
+<h4>⚙️ Mecânicas:</h4>
+<ul>
+<li>Coletar Moedas: A cada quantidade específica de moedas coletadas, o jogador ganha vidas extras.</li>
+<li>Checkpoints: Podem ser ativados apenas uma vez por partida.</li>
+</ul>
+
 <h1>📸 Imagens do Jogo</h1>
 
 <img src="screenshots\tela_inicial.PNG" alt="Tela Inicial">
@@ -29,8 +45,8 @@
 
 <h1>🚀 Como Jogar</h1>
 
-<p>1. Clone o repositório:</p>
-<p><strong>bash git clone https://github.com/seu-usuario/my-kurby.git</strong></p>
-<p>2. Abra o projeto na Godot Engine.</p>
-<p>3. Execute o jogo e divirta-se! 🎮</p>
+<p>1. Se você quer jogar a versão mais recente do jogo <a href="builds/v1.0.0.0/My Kurby.rar">clique aqui</a></p>
 
+<p>2. Depois extraia os arquivos.</p>
+
+<p>3. Escolha o arquivo principal.</p>
