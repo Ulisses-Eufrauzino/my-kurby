@@ -45,7 +45,7 @@
 
 <h1>🚀 Como Jogar</h1>
 
-<p>1. Se você quer jogar a versão mais recente do jogo <a href="builds/v1.0.0.0/My Kurby.rar">clique aqui</a></p>
+<p>1. Se você quer jogar a versão mais recente do jogo <a href="https://github.com/Ulisses-Eufrauzino/my-kurby/blob/main/builds/v1.0.0.0/My%20Kurby.rar">clique aqui</a></p>
 
 <p>2. Depois extraia os arquivos.</p>
 
