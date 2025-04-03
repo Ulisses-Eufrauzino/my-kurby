@@ -25,6 +25,7 @@ var fall_gravity
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
 @onready var destroy_sfx = preload("res://Sounds/destroy_sfx.tscn")
 @onready var hurtbox_sfx: AudioStreamPlayer = $hurtbox_sfx
+@onready var life_coin: AudioStreamPlayer = $life_coin
 
 signal player_has_died()
 
@@ -104,6 +105,7 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	else:
 		queue_free()
 		emit_signal("player_has_died")
+		return
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
@@ -191,9 +193,11 @@ func handle_death_zone():
 		visible = false
 		await get_tree().create_timer(0.5).timeout
 		player_has_died.emit()
+		Globlas.player.queue_free()
 	
 func add_life_collection_coin():
 	while Globlas.count_coins == 30:
+		life_coin.play()
 		Globlas.player_life += 1
 		Globlas.count_coins = 0
 	

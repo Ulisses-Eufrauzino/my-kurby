@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://c722qnem6ambj"]
+[gd_scene load_steps=45 format=4 uid="uid://c722qnem6ambj"]
 
 [ext_resource type="Script" uid="uid://bedo57u5u35m1" path="res://Script/wolrd.gd" id="1_1maah"]
 [ext_resource type="PackedScene" uid="uid://bas3p7dcyv87p" path="res://Actors/player.tscn" id="1_8ih1m"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cyjpp8e0a136g" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="6_fr8rw"]
 [ext_resource type="Texture2D" uid="uid://dkb0ryopppta7" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="6_tdud8"]
 [ext_resource type="Texture2D" uid="uid://dqpf32mky6r0o" path="res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="7_admlw"]
-[ext_resource type="PackedScene" uid="uid://d1u0a0x838exl" path="res://Actors/trex.tscn" id="7_b1a2i"]
 [ext_resource type="Texture2D" uid="uid://dwwr4lbdkxk7u" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_nrl1x"]
 [ext_resource type="Texture2D" uid="uid://cb1a2hd7mmi0l" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_132a4"]
 [ext_resource type="PackedScene" uid="uid://ceeb8tj4v3ymc" path="res://Itens/moviment_plataform.tscn" id="10_qttbu"]
@@ -547,11 +546,6 @@ parameters/looping = true
 
 [node name="player_start_position" type="Marker2D" parent="."]
 position = Vector2(137, 430)
-
-[node name="trex" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_b1a2i")]
-z_index = 5
-position = Vector2(467, 471)
-target = NodePath("../Player")
 
 [node name="fallzone" parent="." instance=ExtResource("32_bxt8n")]
 position = Vector2(2229, 662)

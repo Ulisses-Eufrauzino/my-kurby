@@ -125,7 +125,7 @@ text = "Quit Game"
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tngkl")
+&"": SubResource("AnimationLibrary_tngkl")
 }
 autoplay = "fate_in"
 

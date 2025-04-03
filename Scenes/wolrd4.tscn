@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://sxb0twe8ov4a"]
+[gd_scene load_steps=40 format=4 uid="uid://sxb0twe8ov4a"]
 
 [ext_resource type="Script" uid="uid://bedo57u5u35m1" path="res://Script/wolrd.gd" id="1_6bfxi"]
 [ext_resource type="Texture2D" uid="uid://0jhd7jpx8w1m" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="4_lp166"]
@@ -22,6 +22,7 @@
 [ext_resource type="FontFile" uid="uid://bqa7ihm8ftvpr" path="res://Assets/Fonts/RevMiniPixel.ttf" id="27_ebmhj"]
 [ext_resource type="PackedScene" uid="uid://bwcwwxc8ilb7o" path="res://Actors/tank_boy.tscn" id="28_0hjqv"]
 [ext_resource type="Texture2D" uid="uid://dhrc8pdd65qm8" path="res://Assets/Mini FX, Items & UI/Mini UI/Life-Counter-Icon.png" id="28_4f4lf"]
+[ext_resource type="PackedScene" uid="uid://b3ywmg1s2mrhm" path="res://Itens/checkpoint.tscn" id="28_414kl"]
 [ext_resource type="PackedScene" uid="uid://dx02rrx8osndt" path="res://Itens/pause_menu.tscn" id="29_7d0mw"]
 [ext_resource type="Script" uid="uid://eqvbdy4728ab" path="res://Script/transition.gd" id="30_dmcee"]
 [ext_resource type="Shader" uid="uid://bmorl4bcfn7n3" path="res://Shaders/wolrd.gdshader" id="31_yck0b"]
@@ -217,6 +218,39 @@ position = Vector2(136, 416)
 
 [node name="Coin" parent="Coin" instance=ExtResource("10_xw2y5")]
 position = Vector2(376, 432)
+
+[node name="Coin2" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(427, 432)
+
+[node name="Coin3" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(476, 432)
+
+[node name="Coin4" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(527, 432)
+
+[node name="Coin5" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(577, 432)
+
+[node name="Coin6" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(628, 432)
+
+[node name="Coin7" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(677, 432)
+
+[node name="Coin8" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(728, 432)
+
+[node name="Coin9" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(776, 432)
+
+[node name="Coin10" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(827, 432)
+
+[node name="Coin11" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(876, 432)
+
+[node name="Coin12" parent="Coin" instance=ExtResource("10_xw2y5")]
+position = Vector2(927, 432)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -437,5 +471,10 @@ position = Vector2(1950, 505)
 
 [node name="goal2" parent="." instance=ExtResource("21_4ncme")]
 position = Vector2(2141, 303)
+next_level = "res://Itens/end_game.tscn"
+
+[node name="checkpoint" parent="." instance=ExtResource("28_414kl")]
+position = Vector2(1219, 271)
+scale = Vector2(3, 3)
 
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

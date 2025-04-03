@@ -406,6 +406,7 @@ debug_color = Color(0.698489, 0.493117, 1.92523e-07, 0.42)
 [node name="final_boss_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qdp12")
 volume_db = 5.0
+pitch_scale = 0.4
 parameters/looping = true
 
 [node name="explosiom_sfx" type="AudioStreamPlayer" parent="."]

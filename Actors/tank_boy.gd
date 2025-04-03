@@ -24,7 +24,7 @@ var bomb_count := 0
 var can_launch_missile := true
 var can_launch_bomb := true
 var player_hit := false
-var boss_life := 1
+var boss_life := 5
 
 @export var boss_instance: PackedScene
 
